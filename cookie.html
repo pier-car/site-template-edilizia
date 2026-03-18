@@ -3,35 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Policy — [NOME_AZIENDA]</title>
+    <title>Cookie Policy — EdilPro</title>
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
-        .legal-content {
-            padding: 60px 20px;
+        /* Legal page background with radial gradient "luci" */
+        .legal-page-bg {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse 60% 50% at 10% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 55% at 90% 80%, rgba(30,60,120,0.18) 0%, transparent 65%),
+                var(--bg-primary);
+            padding: 60px 20px 80px;
+            position: relative;
+        }
+
+        /* Main glassmorphism card */
+        .legal-card {
             max-width: 900px;
             margin: 0 auto;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #334155;
+            background: rgba(10, 20, 40, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(201, 168, 76, 0.22);
+            border-radius: 20px;
+            padding: 56px 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.08);
+            position: relative;
+            overflow: hidden;
         }
-        .legal-content h1 { font-size: 2.2rem; color: #0F172A; margin-bottom: 20px; }
-        .legal-content h2 { font-size: 1.5rem; color: #0F172A; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
-        .legal-content h3 { font-size: 1.2rem; color: #0F172A; margin-top: 30px; margin-bottom: 10px; font-weight: 700; }
-        .legal-content p { margin-bottom: 15px; }
-        .legal-content ul { list-style: disc; margin-left: 20px; margin-bottom: 20px; }
-        .legal-content li { margin-bottom: 5px; }
-        .legal-content strong { color: #0F172A; }
+
+        /* Subtle top-edge gold line */
+        .legal-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.55), transparent);
+        }
+
+        /* Back to home button */
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 1px solid rgba(201,168,76,0.25);
+            padding: 9px 20px;
+            border-radius: 4px;
+            margin-bottom: 44px;
+            transition: all 0.25s ease;
+            background: rgba(201,168,76,0.06);
+        }
+        .btn-back-home:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(201,168,76,0.12);
+            transform: translateX(-3px);
+        }
+
+        /* Typography */
+        .legal-card h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+        .legal-card h1 .accent { color: var(--accent); }
+
+        .legal-card .legal-intro {
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 48px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .legal-card h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 48px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .legal-card h2 .section-icon {
+            width: 30px; height: 30px;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.30);
+            border-radius: 6px;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--accent);
+            font-size: 0.78rem;
+            flex-shrink: 0;
+        }
+
+        .legal-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .legal-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .legal-card strong { color: var(--text-primary); }
+
+        .legal-card ul {
+            list-style: none;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        .legal-card ul li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+        .legal-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.75;
+        }
+
+        /* Info/owner box */
         .owner-box {
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            background: rgba(201,168,76,0.06);
+            border: 1px solid rgba(201,168,76,0.22);
+            padding: 24px 28px;
+            border-radius: 12px;
+            margin: 20px 0 28px;
+        }
+        .owner-box p { margin-bottom: 8px; }
+        .owner-box p:last-child { margin-bottom: 0; }
+
+        /* Legal links */
+        .legal-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .legal-card a:hover { color: var(--accent-light); text-decoration: underline; }
+
+        /* Divider */
+        .legal-divider {
+            border: none;
+            border-top: 1px solid rgba(201,168,76,0.15);
+            margin: 44px 0 32px;
+        }
+
+        /* Footer note */
+        .legal-note {
+            font-size: 0.82rem !important;
+            font-style: italic;
+            opacity: 0.6;
+        }
+
+        /* "Back to Home" at the bottom */
+        .back-home-bottom {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-card { padding: 32px 24px; border-radius: 16px; }
+            .legal-card h2 { font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -72,72 +241,81 @@
         <a href="contatti.html#preventivo" class="btn-red" style="text-align:center; margin-top:20px; justify-content: center;">Richiedi Preventivo</a>
     </div>
 
-    <main class="legal-content">
-        
-        <h1>Cookie Policy di [URL_SITO]</h1>
-        <p>Benvenuto nella cookie policy di [URL_SITO]. Questa policy ti aiuterà a comprendere quali cookie e tecnologie di tracciamento utilizziamo, come li utilizziamo e quali sono i tuoi diritti in merito.<br>
-        <strong>Ultima modifica:</strong> 24 dicembre 2025</p>
+    <main class="legal-page-bg">
+        <div class="legal-card">
 
-        <h2>Introduzione</h2>
-        <p>Questo documento contiene informazioni in merito alle tecnologie che consentono a questa Applicazione di raggiungere gli scopi descritti di seguito. Tali tecnologie permettono al Titolare di raccogliere e salvare informazioni (per esempio tramite l&#39;utilizzo di Cookie) o di utilizzare risorse (per esempio eseguendo uno script) sul dispositivo dell&#39;Utente quando quest&#39;ultimo interagisce con questa Applicazione.</p>
-        <p>Per semplicità, in questo documento tali tecnologie sono sinteticamente definite "Strumenti di Tracciamento", salvo vi sia ragione di differenziare.</p>
-        <p>Alcune delle finalità per le quali vengono impiegati Strumenti di Tracciamento potrebbero, inoltre richiedere il consenso dell&#39;Utente. Se viene prestato il consenso, esso può essere revocato liberamente in qualsiasi momento seguendo le istruzioni contenute in questo documento.</p>
-        <p>Questa Applicazione utilizza Strumenti di Tracciamento gestiti direttamente dal Titolare (di prima parte) e Strumenti di Tracciamento che abilitano servizi forniti da terzi (di terza parte). Se non diversamente specificato all&#39;interno di questo documento, tali terzi hanno accesso ai rispettivi Strumenti di Tracciamento.</p>
-        <p>Durata e scadenza dei Cookie e degli altri Strumenti di Tracciamento simili possono variare a seconda di quanto impostato dal Titolare o da ciascun fornitore terzo. Alcuni di essi scadono al termine della sessione di navigazione dell&#39;Utente.</p>
+            <a href="index.html" class="btn-back-home"><i class="fa-solid fa-arrow-left"></i> Torna alla Home</a>
 
-        <h2>Titolare del Trattamento dei Dati</h2>
-        <div class="owner-box">
-            <p><strong><span data-config="nomeAzienda">EdilPro</span></strong><br>
-            <span data-config="indirizzo">Via Roma 1</span>, <span data-config="cap">20100</span> <span data-config="citta">Milano</span> (<span data-config="provincia">MI</span>)</p>
-            <p><strong>Indirizzo email del Titolare:</strong> <span data-config="email">info@edilpro.it</span></p>
+            <h1>Cookie Policy di <span class="accent"><span data-config="nomeAzienda">EdilPro</span></span></h1>
+            <p class="legal-intro">Benvenuto nella cookie policy di <strong><span data-config="nomeAzienda">EdilPro</span></strong>. Questa policy ti aiuterà a comprendere quali cookie e tecnologie di tracciamento utilizziamo, come li utilizziamo e quali sono i tuoi diritti in merito.<br>
+            <strong>Ultima modifica:</strong> 24 dicembre 2025</p>
+
+            <h2><span class="section-icon"><i class="fa-solid fa-circle-info"></i></span> Introduzione</h2>
+            <p>Questo documento contiene informazioni in merito alle tecnologie che consentono a questa Applicazione di raggiungere gli scopi descritti di seguito. Tali tecnologie permettono al Titolare di raccogliere e salvare informazioni (per esempio tramite l&#39;utilizzo di Cookie) o di utilizzare risorse (per esempio eseguendo uno script) sul dispositivo dell&#39;Utente quando quest&#39;ultimo interagisce con questa Applicazione.</p>
+            <p>Per semplicità, in questo documento tali tecnologie sono sinteticamente definite "Strumenti di Tracciamento", salvo vi sia ragione di differenziare.</p>
+            <p>Alcune delle finalità per le quali vengono impiegati Strumenti di Tracciamento potrebbero, inoltre richiedere il consenso dell&#39;Utente. Se viene prestato il consenso, esso può essere revocato liberamente in qualsiasi momento seguendo le istruzioni contenute in questo documento.</p>
+            <p>Questa Applicazione utilizza Strumenti di Tracciamento gestiti direttamente dal Titolare (di prima parte) e Strumenti di Tracciamento che abilitano servizi forniti da terzi (di terza parte). Se non diversamente specificato all&#39;interno di questo documento, tali terzi hanno accesso ai rispettivi Strumenti di Tracciamento.</p>
+            <p>Durata e scadenza dei Cookie e degli altri Strumenti di Tracciamento simili possono variare a seconda di quanto impostato dal Titolare o da ciascun fornitore terzo. Alcuni di essi scadono al termine della sessione di navigazione dell&#39;Utente.</p>
+
+            <h2><span class="section-icon"><i class="fa-solid fa-user-shield"></i></span> Titolare del Trattamento dei Dati</h2>
+            <div class="owner-box">
+                <p><strong><span data-config="nomeAzienda">EdilPro</span></strong><br>
+                <span data-config="indirizzo">Via Roma 1</span>, <span data-config="cap">20100</span> <span data-config="citta">Milano</span> (<span data-config="provincia">MI</span>)</p>
+                <p><strong>Indirizzo email del Titolare:</strong> <span data-config="email">info@edilpro.it</span></p>
+                <p><strong>P.IVA:</strong> <span data-config="pIva">IT00000000000</span></p>
+            </div>
+
+            <h2><span class="section-icon"><i class="fa-solid fa-cookie-bite"></i></span> Come questa Applicazione utilizza gli Strumenti di Tracciamento</h2>
+
+            <h3>Necessari</h3>
+            <p>Questa Applicazione utilizza Cookie comunemente detti "tecnici" o altri Strumenti di Tracciamento analoghi per svolgere attività strettamente necessarie a garantire il funzionamento o la fornitura del Servizio.</p>
+
+            <h3>Esperienza</h3>
+            <p>Questa Applicazione utilizza Strumenti di Tracciamento per migliorare la qualità della user experience e consentire le interazioni con contenuti, network e piattaforme esterni.</p>
+
+            <h3>Strumenti di Tracciamento gestiti da terze parti</h3>
+            <p><strong>Google Maps Widget (Google LLC)</strong><br>
+            Google Maps è un servizio di visualizzazione di mappe gestito da Google LLC che permette a questa Applicazione di integrare tali contenuti all&#39;interno delle proprie pagine.<br>
+            <em>Luogo del trattamento: Stati Uniti – Dati Personali trattati: Dati di utilizzo e Strumenti di Tracciamento.</em></p>
+
+            <h2><span class="section-icon"><i class="fa-solid fa-sliders"></i></span> Come gestire le preferenze e prestare o revocare il consenso</h2>
+            <p>Qualora l&#39;utilizzo dei Tracker sia basato sul consenso, l&#39;Utente può fornire o revocare tale consenso impostando o aggiornando le proprie preferenze tramite il relativo pannello delle scelte in materia di privacy disponibile su questa Applicazione.</p>
+            <p>Per quanto riguarda Strumenti di Tracciamento di terza parte, gli Utenti possono gestire le proprie preferenze visitando il relativo link di opt out (qualora disponibile), utilizzando gli strumenti descritti nella privacy policy della terza parte o contattando quest&#39;ultima direttamente.</p>
+
+            <h3>Come controllare o eliminare Cookie tramite le impostazioni del dispositivo</h3>
+            <p>Gli Utenti possono utilizzare le impostazioni del proprio browser per:</p>
+            <ul>
+                <li>Vedere quali Cookie o altre tecnologie simili sono stati impostati sul dispositivo;</li>
+                <li>Bloccare Cookie o tecnologie simili;</li>
+                <li>Cancellare i Cookie o tecnologie simili dal browser.</li>
+            </ul>
+            <p>Gli Utenti possono trovare informazioni su come gestire i Cookie in alcuni dei browser più diffusi ai seguenti indirizzi: Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Internet Explorer, Microsoft Edge, Brave, Opera.</p>
+
+            <h3>Conseguenze legate al rifiuto</h3>
+            <p>Gli Utenti sono liberi di decidere se permettere o meno l&#39;utilizzo di Strumenti di Tracciamento. Tuttavia, si noti che gli Strumenti di Tracciamento consentono a questa Applicazione di fornire agli Utenti un&#39;esperienza migliore e funzionalità avanzate.</p>
+
+            <h2><span class="section-icon"><i class="fa-solid fa-book-open"></i></span> Definizioni e riferimenti legali</h2>
+
+            <h3>Dati Personali (o Dati)</h3>
+            <p>Costituisce dato personale qualunque informazione che, direttamente o indirettamente, anche in collegamento con qualsiasi altra informazione, ivi compreso un numero di identificazione personale, renda identificata o identificabile una persona fisica.</p>
+
+            <h3>Dati di Utilizzo</h3>
+            <p>Sono le informazioni raccolte automaticamente attraverso questa Applicazione, tra cui: gli indirizzi IP o i nomi a dominio dei computer utilizzati dall&#39;Utente che si connette con questa Applicazione, gli indirizzi in notazione URI, l&#39;orario della richiesta, il metodo utilizzato, la dimensione del file, il codice numerico dello stato della risposta, il paese di provenienza, le caratteristiche del browser e del sistema operativo.</p>
+
+            <h3>Cookie e Strumenti di Tracciamento</h3>
+            <p>I Cookie sono Strumenti di Tracciamento che consistono in piccole porzioni di dati conservate all&#39;interno del browser dell&#39;Utente.</p>
+
+            <hr class="legal-divider">
+            <p class="legal-note">
+                Questa informativa cookie riguarda esclusivamente questa Applicazione.<br>
+                Documento generato tramite Iubenda e ospitato dal Titolare del sito.
+            </p>
+
+            <div class="back-home-bottom">
+                <a href="index.html" class="btn-back-home"><i class="fa-solid fa-arrow-left"></i> Torna alla Home</a>
+            </div>
+
         </div>
-
-        <h2>Come questa Applicazione utilizza gli Strumenti di Tracciamento</h2>
-        
-        <h3>Necessari</h3>
-        <p>Questa Applicazione utilizza Cookie comunemente detti "tecnici" o altri Strumenti di Tracciamento analoghi per svolgere attività strettamente necessarie a garantire il funzionamento o la fornitura del Servizio.</p>
-
-        <h3>Esperienza</h3>
-        <p>Questa Applicazione utilizza Strumenti di Tracciamento per migliorare la qualità della user experience e consentire le interazioni con contenuti, network e piattaforme esterni.</p>
-
-        <h3>Strumenti di Tracciamento gestiti da terze parti</h3>
-        <p><strong>Google Maps Widget (Google LLC)</strong><br>
-        Google Maps è un servizio di visualizzazione di mappe gestito da Google LLC che permette a questa Applicazione di integrare tali contenuti all&#39;interno delle proprie pagine.<br>
-        <em>Luogo del trattamento: Stati Uniti – Dati Personali trattati: Dati di utilizzo e Strumenti di Tracciamento.</em></p>
-
-        <h2>Come gestire le preferenze e prestare o revocare il consenso</h2>
-        <p>Qualora l&#39;utilizzo dei Tracker sia basato sul consenso, l&#39;Utente può fornire o revocare tale consenso impostando o aggiornando le proprie preferenze tramite il relativo pannello delle scelte in materia di privacy disponibile su questa Applicazione.</p>
-        <p>Per quanto riguarda Strumenti di Tracciamento di terza parte, gli Utenti possono gestire le proprie preferenze visitando il relativo link di opt out (qualora disponibile), utilizzando gli strumenti descritti nella privacy policy della terza parte o contattando quest&#39;ultima direttamente.</p>
-
-        <h3>Come controllare o eliminare Cookie tramite le impostazioni del dispositivo</h3>
-        <p>Gli Utenti possono utilizzare le impostazioni del proprio browser per:</p>
-        <ul>
-            <li>Vedere quali Cookie o altre tecnologie simili sono stati impostati sul dispositivo;</li>
-            <li>Bloccare Cookie o tecnologie simili;</li>
-            <li>Cancellare i Cookie o tecnologie simili dal browser.</li>
-        </ul>
-        <p>Gli Utenti possono trovare informazioni su come gestire i Cookie in alcuni dei browser più diffusi ai seguenti indirizzi: Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Internet Explorer, Microsoft Edge, Brave, Opera.</p>
-
-        <h3>Conseguenze legate al rifiuto</h3>
-        <p>Gli Utenti sono liberi di decidere se permettere o meno l&#39;utilizzo di Strumenti di Tracciamento. Tuttavia, si noti che gli Strumenti di Tracciamento consentono a questa Applicazione di fornire agli Utenti un&#39;esperienza migliore e funzionalità avanzate.</p>
-
-        <h2>Definizioni e riferimenti legali</h2>
-        
-        <h3>Dati Personali (o Dati)</h3>
-        <p>Costituisce dato personale qualunque informazione che, direttamente o indirettamente, anche in collegamento con qualsiasi altra informazione, ivi compreso un numero di identificazione personale, renda identificata o identificabile una persona fisica.</p>
-
-        <h3>Dati di Utilizzo</h3>
-        <p>Sono le informazioni raccolte automaticamente attraverso questa Applicazione, tra cui: gli indirizzi IP o i nomi a dominio dei computer utilizzati dall&#39;Utente che si connette con questa Applicazione, gli indirizzi in notazione URI, l&#39;orario della richiesta, il metodo utilizzato, la dimensione del file, il codice numerico dello stato della risposta, il paese di provenienza, le caratteristiche del browser e del sistema operativo.</p>
-
-        <h3>Cookie e Strumenti di Tracciamento</h3>
-        <p>I Cookie sono Strumenti di Tracciamento che consistono in piccole porzioni di dati conservate all&#39;interno del browser dell&#39;Utente.</p>
-
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #e2e8f0;">
-        <p style="font-size: 0.85rem; color: #64748B;">
-            Questa informativa cookie riguarda esclusivamente questa Applicazione.<br>
-            Documento generato tramite Iubenda e ospitato dal Titolare del sito.
-        </p>
-
     </main>
 
     <footer>
