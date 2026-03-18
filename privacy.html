@@ -3,35 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — [NOME_AZIENDA]</title>
+    <title>Privacy Policy — EdilPro</title>
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
-        .legal-content {
-            padding: 60px 20px;
+        /* Legal page background with radial gradient "luci" */
+        .legal-page-bg {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse 60% 50% at 10% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 55% at 90% 80%, rgba(30,60,120,0.18) 0%, transparent 65%),
+                var(--bg-primary);
+            padding: 60px 20px 80px;
+            position: relative;
+        }
+
+        /* Main glassmorphism card */
+        .legal-card {
             max-width: 900px;
             margin: 0 auto;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #334155;
+            background: rgba(10, 20, 40, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(201, 168, 76, 0.22);
+            border-radius: 20px;
+            padding: 56px 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.08);
+            position: relative;
+            overflow: hidden;
         }
-        .legal-content h1 { font-size: 2.2rem; color: #0F172A; margin-bottom: 20px; }
-        .legal-content h2 { font-size: 1.5rem; color: #0F172A; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
-        .legal-content h3 { font-size: 1.2rem; color: #0F172A; margin-top: 30px; margin-bottom: 10px; font-weight: 700; }
-        .legal-content p { margin-bottom: 15px; }
-        .legal-content ul { list-style: disc; margin-left: 20px; margin-bottom: 20px; }
-        .legal-content li { margin-bottom: 5px; }
-        .legal-content strong { color: #0F172A; }
+
+        /* Subtle top-edge gold line */
+        .legal-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.55), transparent);
+        }
+
+        /* Back to home button */
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 1px solid rgba(201,168,76,0.25);
+            padding: 9px 20px;
+            border-radius: 4px;
+            margin-bottom: 44px;
+            transition: all 0.25s ease;
+            background: rgba(201,168,76,0.06);
+        }
+        .btn-back-home:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(201,168,76,0.12);
+            transform: translateX(-3px);
+        }
+
+        /* Typography */
+        .legal-card h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+        .legal-card h1 .accent { color: var(--accent); }
+
+        .legal-card .legal-intro {
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 48px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .legal-card h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 48px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .legal-card h2 .section-icon {
+            width: 30px; height: 30px;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.30);
+            border-radius: 6px;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--accent);
+            font-size: 0.78rem;
+            flex-shrink: 0;
+        }
+
+        .legal-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .legal-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .legal-card strong { color: var(--text-primary); }
+
+        .legal-card ul {
+            list-style: none;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        .legal-card ul li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+        .legal-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.75;
+        }
+
+        /* Info/owner box */
         .owner-box {
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            background: rgba(201,168,76,0.06);
+            border: 1px solid rgba(201,168,76,0.22);
+            padding: 24px 28px;
+            border-radius: 12px;
+            margin: 20px 0 28px;
+        }
+        .owner-box p { margin-bottom: 8px; }
+        .owner-box p:last-child { margin-bottom: 0; }
+
+        /* Legal links */
+        .legal-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .legal-card a:hover { color: var(--accent-light); text-decoration: underline; }
+
+        /* Divider */
+        .legal-divider {
+            border: none;
+            border-top: 1px solid rgba(201,168,76,0.15);
+            margin: 44px 0 32px;
+        }
+
+        /* Footer note */
+        .legal-note {
+            font-size: 0.82rem !important;
+            font-style: italic;
+            opacity: 0.6;
+        }
+
+        /* "Back to Home" at the bottom */
+        .back-home-bottom {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-card { padding: 32px 24px; border-radius: 16px; }
+            .legal-card h2 { font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -72,110 +241,121 @@
         <a href="contatti.html#preventivo" class="btn-red" style="text-align:center; margin-top:20px; justify-content: center;">Richiedi Preventivo</a>
     </div>
 
-    <main class="legal-content">
-        
-        <h1>Privacy Policy di [URL_SITO]</h1>
-        <p>Benvenuto nella privacy policy di [URL_SITO]. Questa policy ti aiuterà a comprendere quali dati raccogliamo, perché li raccogliamo e quali sono i tuoi diritti in merito.<br>
-        <strong>Ultima modifica:</strong> 24 dicembre 2025</p>
+    <main class="legal-page-bg">
+        <div class="legal-card">
 
-        <h2>Titolare del Trattamento dei Dati</h2>
-        <p><strong><span data-config="nomeAzienda">EdilPro</span></strong><br>
-        <span data-config="indirizzo">Via Roma 1</span>, <span data-config="cap">20100</span> <span data-config="citta">Milano</span> (<span data-config="provincia">MI</span>)<br>
-        <strong>Indirizzo email del Titolare:</strong> <span data-config="email">info@edilpro.it</span></p>
+            <a href="index.html" class="btn-back-home"><i class="fa-solid fa-arrow-left"></i> Torna alla Home</a>
 
-        <h2>Tipologie di Dati raccolti</h2>
-        <p>Fra i Dati Personali raccolti da questa Applicazione, in modo autonomo o tramite terze parti, ci sono: Dati di utilizzo, nome, cognome, numero di telefono, email, Strumenti di Tracciamento.</p>
-        <p>Dettagli completi su ciascuna tipologia di Dati Personali raccolti sono forniti nelle sezioni dedicate di questa privacy policy o mediante specifici testi informativi visualizzati prima della raccolta dei Dati stessi.<br>
-        I Dati Personali possono essere liberamente forniti dall&#39;Utente o, nel caso di Dati di Utilizzo, raccolti automaticamente durante l&#39;uso di questa Applicazione.</p>
-        <p>Se non diversamente specificato, tutti i Dati richiesti da questa Applicazione sono obbligatori. Se l&#39;Utente rifiuta di comunicarli, potrebbe essere impossibile per questa Applicazione fornire il Servizio. Nei casi in cui questa Applicazione indichi alcuni Dati come facoltativi, gli Utenti sono liberi di astenersi dal comunicare tali Dati, senza che ciò abbia alcuna conseguenza sulla disponibilità del Servizio o sulla sua operatività.</p>
-        <p>L&#39;eventuale utilizzo di Cookie - o di altri strumenti di tracciamento - da parte di questa Applicazione o dei titolari dei servizi terzi utilizzati da questa Applicazione ha la finalità di fornire il Servizio richiesto dall&#39;Utente, oltre alle ulteriori finalità descritte nel presente documento e nella Cookie Policy.</p>
+            <h1>Privacy Policy di <span class="accent"><span data-config="nomeAzienda">EdilPro</span></span></h1>
+            <p class="legal-intro">Benvenuto nella privacy policy di <strong><span data-config="nomeAzienda">EdilPro</span></strong>. Questa policy ti aiuterà a comprendere quali dati raccogliamo, perché li raccogliamo e quali sono i tuoi diritti in merito.<br>
+            <strong>Ultima modifica:</strong> 24 dicembre 2025</p>
 
-        <h2>Modalità e luogo del trattamento dei Dati raccolti</h2>
-        <h3>Modalità di trattamento</h3>
-        <p>Il Titolare adotta le opportune misure di sicurezza volte ad impedire l&#39;accesso, la divulgazione, la modifica o la distruzione non autorizzate dei Dati Personali. Il trattamento viene effettuato mediante strumenti informatici e/o telematici, con modalità organizzative e con logiche strettamente correlate alle finalità indicate.</p>
-        
-        <h3>Luogo</h3>
-        <p>I Dati sono trattati presso le sedi operative del Titolare ed in ogni altro luogo in cui le parti coinvolte nel trattamento siano localizzate. I Dati Personali dell&#39;Utente potrebbero essere trasferiti in un paese diverso da quello in cui l&#39;Utente si trova.</p>
+            <h2><span class="section-icon"><i class="fa-solid fa-user-shield"></i></span> Titolare del Trattamento dei Dati</h2>
+            <div class="owner-box">
+                <p><strong><span data-config="nomeAzienda">EdilPro</span></strong><br>
+                <span data-config="indirizzo">Via Roma 1</span>, <span data-config="cap">20100</span> <span data-config="citta">Milano</span> (<span data-config="provincia">MI</span>)</p>
+                <p><strong>Indirizzo email del Titolare:</strong> <span data-config="email">info@edilpro.it</span></p>
+                <p><strong>P.IVA:</strong> <span data-config="pIva">IT00000000000</span></p>
+            </div>
 
-        <h3>Periodo di conservazione</h3>
-        <p>Se non diversamente indicato in questo documento, i Dati Personali sono trattati e conservati per il tempo richiesto dalla finalità per la quale sono stati raccolti e potrebbero essere conservati per un periodo più lungo a causa di eventuali obbligazioni legali o sulla base del consenso degli Utenti.</p>
+            <h2><span class="section-icon"><i class="fa-solid fa-database"></i></span> Tipologie di Dati raccolti</h2>
+            <p>Fra i Dati Personali raccolti da questa Applicazione, in modo autonomo o tramite terze parti, ci sono: Dati di utilizzo, nome, cognome, numero di telefono, email, Strumenti di Tracciamento.</p>
+            <p>Dettagli completi su ciascuna tipologia di Dati Personali raccolti sono forniti nelle sezioni dedicate di questa privacy policy o mediante specifici testi informativi visualizzati prima della raccolta dei Dati stessi.<br>
+            I Dati Personali possono essere liberamente forniti dall&#39;Utente o, nel caso di Dati di Utilizzo, raccolti automaticamente durante l&#39;uso di questa Applicazione.</p>
+            <p>Se non diversamente specificato, tutti i Dati richiesti da questa Applicazione sono obbligatori. Se l&#39;Utente rifiuta di comunicarli, potrebbe essere impossibile per questa Applicazione fornire il Servizio. Nei casi in cui questa Applicazione indichi alcuni Dati come facoltativi, gli Utenti sono liberi di astenersi dal comunicare tali Dati, senza che ciò abbia alcuna conseguenza sulla disponibilità del Servizio o sulla sua operatività.</p>
+            <p>L&#39;eventuale utilizzo di Cookie - o di altri strumenti di tracciamento - da parte di questa Applicazione o dei titolari dei servizi terzi utilizzati da questa Applicazione ha la finalità di fornire il Servizio richiesto dall&#39;Utente, oltre alle ulteriori finalità descritte nel presente documento e nella Cookie Policy.</p>
 
-        <h2>Finalità del Trattamento dei Dati raccolti</h2>
-        <p>I Dati dell&#39;Utente sono raccolti per consentire al Titolare di fornire il Servizio, adempiere agli obblighi di legge, rispondere a richieste o azioni esecutive, tutelare i propri diritti ed interessi, individuare eventuali attività dolose o fraudolente, nonché per le seguenti finalità:</p>
-        <ul>
-            <li>Contattare l&#39;Utente</li>
-            <li>Hosting ed infrastruttura backend</li>
-            <li>Visualizzazione di contenuti da piattaforme esterne</li>
-            <li>Interazione con social network e piattaforme esterne (WhatsApp)</li>
-            <li>Gestione di font e stili (Google Fonts, Font Awesome)</li>
-        </ul>
+            <h2><span class="section-icon"><i class="fa-solid fa-gears"></i></span> Modalità e luogo del trattamento dei Dati raccolti</h2>
+            <h3>Modalità di trattamento</h3>
+            <p>Il Titolare adotta le opportune misure di sicurezza volte ad impedire l&#39;accesso, la divulgazione, la modifica o la distruzione non autorizzate dei Dati Personali. Il trattamento viene effettuato mediante strumenti informatici e/o telematici, con modalità organizzative e con logiche strettamente correlate alle finalità indicate.</p>
 
-        <h2>Dettagli sul trattamento dei Dati Personali</h2>
-        <p>I Dati Personali sono raccolti per le seguenti finalità ed utilizzando i seguenti servizi:</p>
+            <h3>Luogo</h3>
+            <p>I Dati sono trattati presso le sedi operative del Titolare ed in ogni altro luogo in cui le parti coinvolte nel trattamento siano localizzate. I Dati Personali dell&#39;Utente potrebbero essere trasferiti in un paese diverso da quello in cui l&#39;Utente si trova.</p>
 
-        <h3>Contattare l&#39;Utente</h3>
-        <p><strong>Modulo di contatto (Questo Sito Web)</strong><br>
-        L&#39;Utente, compilando con i propri Dati il modulo di contatto, acconsente al loro utilizzo per rispondere alle richieste di informazioni, di preventivo, o di qualunque altra natura indicata dall&#39;intestazione del modulo.<br>
-        <em>Dati Personali trattati: cognome; email; nome; numero di telefono.</em></p>
+            <h3>Periodo di conservazione</h3>
+            <p>Se non diversamente indicato in questo documento, i Dati Personali sono trattati e conservati per il tempo richiesto dalla finalità per la quale sono stati raccolti e potrebbero essere conservati per un periodo più lungo a causa di eventuali obbligazioni legali o sulla base del consenso degli Utenti.</p>
 
-        <h3>Hosting ed infrastruttura backend</h3>
-        <p><strong>Netlify (Netlify, Inc.)</strong><br>
-        Netlify è un servizio di hosting fornito da Netlify, Inc.<br>
-        <em>Dati Personali trattati: Dati di utilizzo.</em><br>
-        <em>Luogo del trattamento: Stati Uniti.</em></p>
+            <h2><span class="section-icon"><i class="fa-solid fa-bullseye"></i></span> Finalità del Trattamento dei Dati raccolti</h2>
+            <p>I Dati dell&#39;Utente sono raccolti per consentire al Titolare di fornire il Servizio, adempiere agli obblighi di legge, rispondere a richieste o azioni esecutive, tutelare i propri diritti ed interessi, individuare eventuali attività dolose o fraudolente, nonché per le seguenti finalità:</p>
+            <ul>
+                <li>Contattare l&#39;Utente</li>
+                <li>Hosting ed infrastruttura backend</li>
+                <li>Visualizzazione di contenuti da piattaforme esterne</li>
+                <li>Interazione con social network e piattaforme esterne (WhatsApp)</li>
+                <li>Gestione di font e stili (Google Fonts, Font Awesome)</li>
+            </ul>
 
-        <h3>Visualizzazione di contenuti da piattaforme esterne</h3>
-        <p><strong>Google Maps Widget (Google LLC)</strong><br>
-        Google Maps è un servizio di visualizzazione di mappe gestito da Google LLC che permette a questa Applicazione di integrare tali contenuti all&#39;interno delle proprie pagine.<br>
-        <em>Dati Personali trattati: Dati di utilizzo; Strumenti di Tracciamento.</em><br>
-        <em>Luogo del trattamento: Stati Uniti.</em></p>
+            <h2><span class="section-icon"><i class="fa-solid fa-list-check"></i></span> Dettagli sul trattamento dei Dati Personali</h2>
+            <p>I Dati Personali sono raccolti per le seguenti finalità ed utilizzando i seguenti servizi:</p>
 
-        <h3>Interazione con social network e piattaforme esterne</h3>
-        <p><strong>Pulsante WhatsApp (WhatsApp Ireland Limited)</strong><br>
-        Questo sito contiene un pulsante che collega direttamente alla chat di WhatsApp. Cliccando il pulsante, l&#39;Utente viene reindirizzato sulla piattaforma esterna WhatsApp, che potrebbe raccogliere dati secondo la propria privacy policy.<br>
-        <em>Dati Personali trattati: Dati di utilizzo; Strumenti di Tracciamento.</em><br>
-        <em>Luogo del trattamento: Irlanda.</em></p>
+            <h3>Contattare l&#39;Utente</h3>
+            <p><strong>Modulo di contatto (Questo Sito Web)</strong><br>
+            L&#39;Utente, compilando con i propri Dati il modulo di contatto, acconsente al loro utilizzo per rispondere alle richieste di informazioni, di preventivo, o di qualunque altra natura indicata dall&#39;intestazione del modulo.<br>
+            <em>Dati Personali trattati: cognome; email; nome; numero di telefono.</em></p>
 
-        <h3>Librerie di stile e font</h3>
-        <p><strong>Google Fonts (Google LLC) e Font Awesome (Cloudflare)</strong><br>
-        Questo sito utilizza librerie esterne per la visualizzazione corretta dei caratteri (Google Fonts) e delle icone (Font Awesome via Cloudflare CDN).<br>
-        <em>Dati Personali trattati: Dati di utilizzo.</em><br>
-        <em>Luogo del trattamento: Stati Uniti.</em></p>
+            <h3>Hosting ed infrastruttura backend</h3>
+            <p><strong>Netlify (Netlify, Inc.)</strong><br>
+            Netlify è un servizio di hosting fornito da Netlify, Inc.<br>
+            <em>Dati Personali trattati: Dati di utilizzo.</em><br>
+            <em>Luogo del trattamento: Stati Uniti.</em></p>
 
-        <h2>Cookie Policy</h2>
-        <p>Questa Applicazione fa utilizzo di Strumenti di Tracciamento. Per saperne di più, gli Utenti possono consultare la <a href="cookie.html" style="color:#DC2626; font-weight:bold;">Cookie Policy</a>.</p>
+            <h3>Visualizzazione di contenuti da piattaforme esterne</h3>
+            <p><strong>Google Maps Widget (Google LLC)</strong><br>
+            Google Maps è un servizio di visualizzazione di mappe gestito da Google LLC che permette a questa Applicazione di integrare tali contenuti all&#39;interno delle proprie pagine.<br>
+            <em>Dati Personali trattati: Dati di utilizzo; Strumenti di Tracciamento.</em><br>
+            <em>Luogo del trattamento: Stati Uniti.</em></p>
 
-        <h2>Ulteriori informazioni per gli utenti</h2>
-        <h3>Base giuridica del trattamento</h3>
-        <p>Il Titolare tratta Dati Personali relativi all&#39;Utente in caso sussista una delle seguenti condizioni:</p>
-        <ul>
-            <li>l&#39;Utente ha prestato il consenso per una o più finalità specifiche;</li>
-            <li>il trattamento è necessario all&#39;esecuzione di un contratto con l&#39;Utente;</li>
-            <li>il trattamento è necessario per adempiere un obbligo legale;</li>
-            <li>il trattamento è necessario per il perseguimento del legittimo interesse del Titolare.</li>
-        </ul>
+            <h3>Interazione con social network e piattaforme esterne</h3>
+            <p><strong>Pulsante WhatsApp (WhatsApp Ireland Limited)</strong><br>
+            Questo sito contiene un pulsante che collega direttamente alla chat di WhatsApp. Cliccando il pulsante, l&#39;Utente viene reindirizzato sulla piattaforma esterna WhatsApp, che potrebbe raccogliere dati secondo la propria privacy policy.<br>
+            <em>Dati Personali trattati: Dati di utilizzo; Strumenti di Tracciamento.</em><br>
+            <em>Luogo del trattamento: Irlanda.</em></p>
 
-        <h3>Diritti dell&#39;Utente (GDPR)</h3>
-        <p>Gli Utenti possono esercitare determinati diritti con riferimento ai Dati trattati dal Titolare. In particolare, l&#39;Utente ha il diritto di:</p>
-        <ul>
-            <li>Revocare il consenso in ogni momento.</li>
-            <li>Opporsi al trattamento dei propri Dati.</li>
-            <li>Accedere ai propri Dati.</li>
-            <li>Verificare e chiedere la rettificazione.</li>
-            <li>Ottenere la limitazione del trattamento.</li>
-            <li>Ottenere la cancellazione o rimozione dei propri Dati Personali.</li>
-            <li>Ricevere i propri Dati o farli trasferire ad altro titolare.</li>
-            <li>Proporre reclamo all&#39;autorità di controllo.</li>
-        </ul>
+            <h3>Librerie di stile e font</h3>
+            <p><strong>Google Fonts (Google LLC) e Font Awesome (Cloudflare)</strong><br>
+            Questo sito utilizza librerie esterne per la visualizzazione corretta dei caratteri (Google Fonts) e delle icone (Font Awesome via Cloudflare CDN).<br>
+            <em>Dati Personali trattati: Dati di utilizzo.</em><br>
+            <em>Luogo del trattamento: Stati Uniti.</em></p>
 
-        <h3>Come esercitare i diritti</h3>
-        <p>Eventuali richieste di esercizio dei diritti dell&#39;Utente possono essere indirizzate al Titolare attraverso i recapiti forniti in questo documento (<span data-config="email">info@edilpro.it</span>). La richiesta è gratuita e il Titolare risponderà nel più breve tempo possibile, in ogni caso entro un mese.</p>
+            <h2><span class="section-icon"><i class="fa-solid fa-cookie-bite"></i></span> Cookie Policy</h2>
+            <p>Questa Applicazione fa utilizzo di Strumenti di Tracciamento. Per saperne di più, gli Utenti possono consultare la <a href="cookie.html">Cookie Policy</a>.</p>
 
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #e2e8f0;">
-        <p style="font-size: 0.9rem;">
-            <em>Questo documento è stato creato con il supporto del Generatore di Privacy e Cookie Policy di iubenda e integrato manualmente dal Titolare per completezza tecnica.</em>
-        </p>
+            <h2><span class="section-icon"><i class="fa-solid fa-scale-balanced"></i></span> Ulteriori informazioni per gli utenti</h2>
+            <h3>Base giuridica del trattamento</h3>
+            <p>Il Titolare tratta Dati Personali relativi all&#39;Utente in caso sussista una delle seguenti condizioni:</p>
+            <ul>
+                <li>l&#39;Utente ha prestato il consenso per una o più finalità specifiche;</li>
+                <li>il trattamento è necessario all&#39;esecuzione di un contratto con l&#39;Utente;</li>
+                <li>il trattamento è necessario per adempiere un obbligo legale;</li>
+                <li>il trattamento è necessario per il perseguimento del legittimo interesse del Titolare.</li>
+            </ul>
 
+            <h3>Diritti dell&#39;Utente (GDPR)</h3>
+            <p>Gli Utenti possono esercitare determinati diritti con riferimento ai Dati trattati dal Titolare. In particolare, l&#39;Utente ha il diritto di:</p>
+            <ul>
+                <li>Revocare il consenso in ogni momento.</li>
+                <li>Opporsi al trattamento dei propri Dati.</li>
+                <li>Accedere ai propri Dati.</li>
+                <li>Verificare e chiedere la rettificazione.</li>
+                <li>Ottenere la limitazione del trattamento.</li>
+                <li>Ottenere la cancellazione o rimozione dei propri Dati Personali.</li>
+                <li>Ricevere i propri Dati o farli trasferire ad altro titolare.</li>
+                <li>Proporre reclamo all&#39;autorità di controllo.</li>
+            </ul>
+
+            <h3>Come esercitare i diritti</h3>
+            <p>Eventuali richieste di esercizio dei diritti dell&#39;Utente possono essere indirizzate al Titolare attraverso i recapiti forniti in questo documento (<a href="#" data-config-href="mailto:{email}"><span data-config="email">info@edilpro.it</span></a>). La richiesta è gratuita e il Titolare risponderà nel più breve tempo possibile, in ogni caso entro un mese.</p>
+
+            <hr class="legal-divider">
+            <p class="legal-note">
+                <em>Questo documento è stato creato con il supporto del Generatore di Privacy e Cookie Policy di iubenda e integrato manualmente dal Titolare per completezza tecnica.</em>
+            </p>
+
+            <div class="back-home-bottom">
+                <a href="index.html" class="btn-back-home"><i class="fa-solid fa-arrow-left"></i> Torna alla Home</a>
+            </div>
+
+        </div>
     </main>
 
     <footer>
