@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Turcoman - Edilizia e Ristrutturazioni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Turcoman - Ristrutturazioni e Edilizia</title>
+    <meta name="description" content="Ristrutturazioni complete, impianti idraulici ed elettrici, decorazioni e edilizia a Torino. Qualità, puntualità e preventivi gratuiti. Chiamaci ora.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Albert Turcoman Edilizia">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round">
+                        <circle cx="50" cy="50" r="44" stroke="#0B1120" /> <rect x="22" y="22" width="24" height="24" rx="6" stroke="#DC2626" />
+                        <rect x="54" y="22" width="24" height="24" rx="6" stroke="#DC2626" />
+                        <rect x="22" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
+                        <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
+                    </svg>
+                </div>
+                Albert Turcoman
+            </a>
+            
+            <nav class="desktop-menu">
+                <a href="index.html" style="color:var(--primary-red)">Home</a>
+                <a href="servizi.html">Servizi</a>
+                <a href="galleria.html">Galleria</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="tel:3207146576" class="phone-cta">
+                    <i class="fa-solid fa-phone"></i> 320 7146576
+                </a>
+                <a href="contatti.html#preventivo" class="btn-red desktop-btn">Richiedi Preventivo</a>
+                
+                <div class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="servizi.html" onclick="toggleMenu()">Servizi</a>
+        <a href="galleria.html" onclick="toggleMenu()">Galleria</a>
+        <a href="contatti.html" onclick="toggleMenu()">Contatti</a>
+        <a href="contatti.html#preventivo" class="btn-red" style="text-align:center; margin-top:20px; justify-content: center;">Richiedi Preventivo</a>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="pill-badge">15+ Anni di Eccellenza</span>
+                <h1>Costruiamo la Tua Visione, <br><span>Mattone dopo Mattone</span></h1>
+                <p>Servizi professionali di edilizia, ristrutturazioni e impiantistica a Torino. Qualità, precisione e affidabilità al tuo servizio.</p>
+                
+                <div class="hero-actions">
+                    <a href="contatti.html#preventivo" class="btn-red">Preventivo Gratuito <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="servizi.html" class="btn-outline">I Nostri Servizi</a>
+                </div>
+
+                <div class="trust-row">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="trust-text">
+                            <strong>Completamente Assicurati</strong>
+                            <span>Autorizzati e Garantiti</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-ribbon"></i></div>
+                        <div class="trust-text">
+                            <strong>Lavoro di Qualità</strong>
+                            <span>Soddisfazione Garantita</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="trust-text">
+                            <strong>Puntuali</strong>
+                            <span>Consegna Progetti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="section-padding" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">COSA FACCIAMO</span>
+                <h2 class="main-title">Servizi Professionali di Costruzione</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box icon-red"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Intonaci</h3>
+                    <p>Intonaci tradizionali, premiscelati e deumidificanti per il risanamento dei muri.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box icon-blue"><i class="fa-solid fa-paint-roller"></i></div>
+                    <h3>Rasatura</h3>
+                    <p>Rasatura liscia per superfici perfettamente lisce e pronte per la pitturazione.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box icon-orange"><i class="fa-regular fa-building"></i></div>
+                    <h3>Edilizia</h3>
+                    <p>Costruzioni edili generali, opere in muratura e ripristino di edifici civili.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box icon-purple"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Decorazioni</h3>
+                    <p>Pittura, stucchi decorativi e carta da parati per interni ed esterni.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box icon-green"><i class="fa-solid fa-faucet-drip"></i></div>
+                    <h3>Idraulica</h3>
+                    <p>Installazione e manutenzione impianti idraulici, sanitari e riscaldamento.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box icon-purple"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Elettricista</h3>
+                    <p>Impianti elettrici civili e industriali, manutenzione e messa a norma.</p>
+                    <a href="servizi.html" class="link-arrow">Scopri di Più <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="servizi.html" class="btn-red" style="background: var(--primary-dark);">Vedi Tutti i Servizi</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleria" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">I NOSTRI LAVORI</span>
+                <h2 class="main-title">Galleria Progetti</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Lavori di muratura"><div class="overlay-text">Progetto Muratura</div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Ristrutturazione esterni"><div class="overlay-text">Muri Esterni</div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Ristrutturazione completa"><div class="overlay-text">Ristrutturazioni</div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop" alt="Posa pavimenti"><div class="overlay-text">Pavimentazioni</div></div>
+            </div>
+             <div style="text-align: center; margin-top: 50px;">
+                <a href="galleria.html" class="btn-red" style="background: white; color: var(--text-main); border: 1px solid var(--border);">Vedi Galleria Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container about-layout">
+            <div class="about-image">
+                <img src="images/albert-titolare.png" alt="Albert Turcoman" class="titolare-img">
+                <div class="floating-card">
+                    <h4>Albert Turcoman</h4>
+                    <span>Titolare</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="sub-title">CHI SIAMO</span>
+                <h2 class="main-title">Costruiamo la Tua Visione, Mattone dopo Mattone</h2>
+                <p style="color:var(--text-light); margin: 20px 0;">Sono Albert Turcoman, titolare. Con anni di esperienza nel settore edile, ho fondato questa azienda con un obiettivo semplice: offrire servizi di costruzione basati su affidabilità, precisione e qualità.</p>
+                <div class="check-list">
+                    <div class="check-item"><div class="check-circle">✓</div> Edilizia & Muratura</div>
+                    <div class="check-item"><div class="check-circle">✓</div> Decorazioni & Interni</div>
+                    <div class="check-item"><div class="check-circle">✓</div> Impianti Idraulici</div>
+                    <div class="check-item"><div class="check-circle">✓</div> Impianti Elettrici</div>
+                </div>
+                <div class="stats">
+                    <div><div class="stat-num">15+</div><div class="stat-label">Anni Esperienza</div></div>
+                    <div><div class="stat-num">300+</div><div class="stat-label">Progetti</div></div>
+                </div>
+                <br>
+                <a href="contatti.html#preventivo" class="btn-red">Richiedi Preventivo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-pattern"></div>
+        
+        <div class="container cta-content">
+            <h2>Pronto a Iniziare il Tuo Progetto?</h2>
+            <p>Contattaci oggi per una consulenza e un preventivo gratuiti. Discutiamo insieme come realizzare la tua visione edile.</p>
+            
+            <div class="cta-form-row">
+                <a href="contatti.html#preventivo" class="btn-red">Preventivo Gratuito <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="tel:3207146576" class="btn-outline">
+                     <i class="fa-solid fa-phone"></i> 320 7146576
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round">
+                            <circle cx="50" cy="50" r="45" stroke="#FFFFFF" />
+                            <rect x="22" y="22" width="24" height="24" rx="6" stroke="#DC2626" />
+                            <rect x="54" y="22" width="24" height="24" rx="6" stroke="#DC2626" />
+                            <rect x="22" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
+                            <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
+                        </svg>
+                    </div> 
+                    <div class="logo-text">Albert Turcoman<br><span>Edilizia e Ristrutturazioni</span></div>
+                </div>
+                <p class="footer-desc">Specializzati in Edilizia, Decorazioni, Idraulica, Elettricista, Piastrellista, Intonaci e Rasatura. Offriamo un servizio completo e professionale.</p>
+                <a href="https://wa.me/393207146576" class="btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servizi.html">I Nostri Servizi</a></li>
+                    <li><a href="galleria.html">Galleria Progetti</a></li>
+                    <li><a href="contatti.html">Contattaci</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Servizi</h4>
+                <ul>
+                    <li><a href="servizi.html">Edilizia</a></li>
+                    <li><a href="servizi.html">Decorazioni</a></li>
+                    <li><a href="servizi.html">Idraulica</a></li>
+                    <li><a href="servizi.html">Elettricista</a></li>
+                    <li><a href="servizi.html">Piastrellista</a></li>
+                    <li><a href="servizi.html">Intonaci e Rasatura</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contattaci</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong><a href="tel:3207146576" style="color:white; text-decoration: none;">320 7146576</a></strong>
+                            <span>Chiamaci quando vuoi</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong><a href="contatti.html#preventivo" style="color:white; text-decoration: none;">info@albertturcoman.it</a></strong>
+                            <span>Scrivici per preventivi</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Bottesini+15+Torino" target="_blank" style="color:white; text-decoration: none;">Piazza Bottesini 15</a></strong>
+                            <span>Torino (10154)</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Lun - Ven: 8:00 - 18:00</strong>
+                            <span>Sab: 8:00 - 13:00</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>         
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <div class="bottom-left">
+                    © 2025 Albert Turcoman. P.IVA 13288160016
+                    <div style="margin-top: 10px; font-size: 0.85rem;">
+                        <a href="privacy.html" class="legal-link">Privacy Policy</a>
+                        <span style="opacity: 0.5; margin: 0 5px;">|</span>
+                        <a href="cookie.html" class="legal-link">Cookie Policy</a>
+                        <span style="opacity: 0.5; margin: 0 5px;">|</span>
+                        <a href="#" onclick="reopenBanner(); return false;" class="legal-link" style="text-decoration: underline;">Gestisci Cookie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner">
+        <p>
+            Utilizziamo cookie tecnici e di terze parti (Mappe) per migliorare la tua esperienza. 
+            Puoi accettare o rifiutare.
+            Leggi la <a href="cookie.html" style="color: #cbd5e1; text-decoration: underline;">Cookie Policy</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button onclick="rejectCookies()" class="btn-cookie-outline">Rifiuta</button>
+            <button onclick="acceptCookies()" class="btn-cookie-fill">Accetta</button>
+        </div>
+    </div>
+
+    <script>
+        // Menu Mobile
+        function toggleMenu() { 
+            const menu = document.getElementById('mobileMenu');
+            if(menu) menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex'; 
+        }
+        
+        // Logica Cookie
+        function acceptCookies() {
+            document.getElementById('cookie-banner').classList.remove('show');
+            localStorage.setItem('cookieConsent', 'accepted');
+        }
+        function rejectCookies() {
+            document.getElementById('cookie-banner').classList.remove('show');
+            localStorage.setItem('cookieConsent', 'rejected');
+        }
+        function reopenBanner() {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        // Controllo all'avvio
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1000);
+            }
+        });
+    </script>
+</body>
+</html>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            // Logica più robusta per gestire lo stato iniziale del display
+            const computedStyle = window.getComputedStyle(menu);
+            if (computedStyle.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
+
+    <div id="cookie-banner">
+        <p>
+            Questo sito utilizza i cookie per garantirti la migliore esperienza. 
+            Leggi la nostra <a href="#" style="color: #cbd5e1; text-decoration: underline;">Cookie Policy</a>.
+        </p>
+        <button onclick="acceptCookies()">Accetto</button>
+    </div>
+
+    <script>
+        // Logica Cookie Banner
+        function acceptCookies() {
+            document.getElementById('cookie-banner').classList.remove('show');
+            localStorage.setItem('cookieConsent', 'true');
+        }
+
+        // Mostra il banner solo se non è stato ancora accettato
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(function() {
+                    document.getElementById('cookie-banner').classList.add('show');
+                }, 1000); // Ritardo di 1 secondo per eleganza
+            }
+        });
+    </script>
+
+</body>
+</html>
