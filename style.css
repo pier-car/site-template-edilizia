@@ -6,6 +6,7 @@
     --text-light: #64748B;
     --white: #ffffff;
     --border: #E2E8F0;
+    /* ↑ Colori del brand: modifica qui per ogni nuovo cliente */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -75,6 +76,7 @@ header {
     position: relative;
     z-index: 10;
     padding: 5px;
+    transition: color 0.2s;
 }
 
 .btn-red {
@@ -618,15 +620,7 @@ html { scroll-behavior: smooth; }
 
 
 
-/* 1. Stile per il contenitore dell'immagine */
-.about-image {
-    position: relative; /* Fondamentale per far stare la "floating-card" al suo posto */
-    width: 100%;
-    height: 100%; /* Cerca di occupare tutta l'altezza disponibile */
-    min-height: 400px; /* Altezza minima di sicurezza per desktop */
-}
-
-/* 2. Stile SPECIFICO per la tua nuova immagine */
+/* 2. Stile SPECIFICO per l'immagine principale */
 .titolare-img {
     width: 100%;
     height: 500px; /* ALTEZZA FISSA: Modifica questo valore per pareggiare col testo */
@@ -646,4 +640,47 @@ html { scroll-behavior: smooth; }
         /* Assicura che su mobile le colonne stiano una sopra l'altra */
         flex-direction: column; 
     }
+}
+
+/* --- FLOATING WHATSAPP BUTTON --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s, background 0.3s;
+}
+.whatsapp-float:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    color: white;
+}
+
+/* --- SCROLL ANIMATIONS --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ACCESSIBILITY: focus-visible --- */
+.btn-red:focus-visible,
+.btn-outline:focus-visible,
+.filter-btn:focus-visible {
+    outline: 3px solid #FCA5A5;
+    outline-offset: 2px;
 }
