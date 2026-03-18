@@ -1,43 +1,44 @@
 /**
  * ============================================================
- *  CONFIGURAZIONE SITO — EdilPro Template
+ *  CONFIGURAZIONE SITO — Edilizia d'Elite Template
  *  Modifica solo questo file per adattare il sito a un nuovo cliente.
  * ============================================================
  */
 window.SITO = {
 
   // --- IDENTITÀ AZIENDA ---
-  nomeAzienda:      "EdilPro",
-  slogan:           "Edilizia e Ristrutturazioni",
-  descrizioneBreve: "Specializzati in edilizia, decorazioni, idraulica, impianti elettrici e pavimenti. Servizio completo e professionale.",
-  anniEsperienza:   "15+",
-  numeroProgetti:   "300+",
+  nomeAzienda:      "Edilizia d'Elite",
+  slogan:           "L'Arte del Costruire",
+  descrizioneBreve: "Artigianato italiano d'eccellenza: ogni progetto nasce da una visione e si compie con precisione millimetrica. Soluzioni chiavi in mano per chi non scende a compromessi.",
+  anniEsperienza:   "25+",
+  numeroProgetti:   "500+",
+  titolare:         "Mario Rossi",
 
   // --- CONTATTI ---
-  telefono:         "320 000 0000",          // Numero visualizzato
-  telefonoHref:     "3200000000",            // Solo cifre, per href="tel:..."
-  whatsapp:         "393200000000",          // Prefisso internazionale 39 + numero
-  email:            "info@edilpro.it",
+  telefono:         "02 1234 5678",          // Numero visualizzato
+  telefonoHref:     "0212345678",            // Solo cifre, per href="tel:..."
+  whatsapp:         "390212345678",          // Prefisso internazionale 39 + numero
+  email:            "info@edilitelite.it",
 
   // --- SEDE ---
-  indirizzo:        "Via Roma 1",
+  indirizzo:        "Via Montenapoleone 8",
   citta:            "Milano",
-  cap:              "20100",
+  cap:              "20121",
   provincia:        "MI",
-  mappaQuery:       "Via+Roma+1+Milano",     // Per il link Google Maps
-  mappaEmbed:       "https://maps.google.com/maps?q=Via+Roma,+1,+20100+Milano+MI&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  mappaQuery:       "Via+Montenapoleone+8+Milano",     // Per il link Google Maps
+  mappaEmbed:       "https://maps.google.com/maps?q=Via+Montenapoleone,+8,+20121+Milano+MI&t=&z=15&ie=UTF8&iwloc=&output=embed",
 
   // --- ORARI ---
-  orariSettimana:   "Lun - Ven: 8:00 - 18:00",
-  orariSabato:      "Sab: 8:00 - 13:00",
+  orariSettimana:   "Lun - Ven: 9:00 - 18:00",
+  orariSabato:      "Sab: 9:00 - 13:00",
 
   // --- DATI LEGALI ---
-  pIva:             "IT00000000000",
-  annoFondazione:   "2010",
+  pIva:             "IT12345678901",
+  annoFondazione:   "2000",
   annoCorrente:     new Date().getFullYear(),
 
   // --- SEO ---
-  titoloPagineBase: "EdilPro — Edilizia e Ristrutturazioni",
+  titoloPagineBase: "Edilizia d'Elite — Artigianato Italiano di Lusso a Milano",
   localita:         "Milano",               // Usato nelle meta description
 
   // --- SOCIAL (lascia vuoto "" per nascondere il pulsante) ---
@@ -45,7 +46,7 @@ window.SITO = {
   instagram:        "",
 
   // --- BRAND COLORS (modifica anche :root in style.css) ---
-  // coloreAccento:  "#DC2626",  // Rosso default — cambia in style.css nella sezione :root
+  // coloreAccento:  "#C9A84C",  // Gold luxury — cambia in style.css nella sezione :root
 };
 
 /**
