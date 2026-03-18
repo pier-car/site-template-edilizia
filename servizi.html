@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Nostri Servizi - Edilizia, Impianti e Decorazioni</title>
-    <meta name="description" content="Scopri i servizi di Albert Turcoman: Idraulica, Elettricista, Piastrellista, Intonaci, Rasatura e Decorazioni. Lavori chiavi in mano a Torino.">
+    <title>I Nostri Servizi — Edilizia, Impianti e Decorazioni</title>
+    <meta name="description" content="Scopri i nostri servizi: Idraulica, Elettricista, Piastrellista, Intonaci, Rasatura e Decorazioni. Lavori chiavi in mano.">
+    <!-- Verifica Google Search Console: inserisci il codice qui sotto -->
+    <meta name="google-site-verification" content="">
+    <!-- URL canonico: aggiorna con l'URL reale dopo il deploy -->
+    <link rel="canonical" href="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="I Nostri Servizi — Edilizia, Impianti e Decorazioni">
+    <meta property="og:description" content="Scopri i nostri servizi professionali: Idraulica, Elettricista, Piastrellista, Intonaci, Rasatura e Decorazioni.">
+    <meta property="og:image" content="images/og-cover.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
-        /* Piccola correzione specifica per questa pagina */
-        .services-hero {
+        .services-hero {{
             background-color: #0F172A;
             padding: 100px 0 60px;
             text-align: center;
             color: white;
-        }
-        /* Rende le card tutte alte uguali per ordine visivo */
-        .service-img-card {
+        }}
+        .service-img-card {{
             height: 100%;
             display: flex;
             flex-direction: column;
-        }
-        .card-content {
+        }}
+        .card-content {{
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
+        }}
     </style>
 </head>
 <body>
@@ -45,7 +51,7 @@
                         <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                     </svg>
                 </div>
-                Albert Turcoman
+                <span data-config="nomeAzienda">EdilPro</span>
             </a>
             <nav class="desktop-menu">
                 <a href="index.html">Home</a>
@@ -54,7 +60,7 @@
                 <a href="contatti.html">Contatti</a>
             </nav>
             <div class="header-right">
-                <a href="tel:3207146576" class="phone-cta"><i class="fa-solid fa-phone"></i> 320 7146576</a>
+                <a data-config-href="tel:{telefonoHref}" href="#" class="phone-cta"><i class="fa-solid fa-phone"></i> <span data-config="telefono">320 000 0000</span></a>
                 <a href="contatti.html#preventivo" class="btn-red desktop-btn">Richiedi Preventivo</a>
                 <div class="mobile-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
             </div>
@@ -62,10 +68,10 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" onclick="toggleMenu()">Home</a>
-        <a href="servizi.html" onclick="toggleMenu()">Servizi</a>
-        <a href="galleria.html" onclick="toggleMenu()">Galleria</a>
-        <a href="contatti.html" onclick="toggleMenu()">Contatti</a>
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="contatti.html">Contatti</a>
         <a href="contatti.html#preventivo" class="btn-red" style="text-align:center; margin-top:20px; justify-content: center;">Richiedi Preventivo</a>
     </div>
 
@@ -82,42 +88,10 @@
     <section class="section-padding" style="background: #FAFAFA;">
         <div class="container">
             <div class="services-grid">
-                
-                <!-- <div class="service-img-card">
-                    <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Intonaci">
-                        <div class="card-floating-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <h3>Intonaci e Risanamento</h3>
-                            <p>Ripristiniamo i tuoi muri rendendoli sani e robusti. Utilizziamo intonaci specifici (anche deumidificanti) per risolvere problemi di umidità alla radice.</p>
-                        </div>
-                        <a href="contatti.html#preventivo" class="card-action-btn">
-                            Chiedi Sopralluogo <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=600&auto=format&fit=crop" alt="Rasatura muri">
-                        <div class="card-floating-icon"><i class="fa-solid fa-eraser"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <h3>Rasatura Perfetta</h3>
-                            <p>Il segreto di una bella casa è una parete liscia. Eseguiamo rasature fini per eliminare ogni imperfezione prima della tinteggiatura.</p>
-                        </div>
-                        <a href="contatti.html#preventivo" class="card-action-btn">
-                            Chiedi Sopralluogo <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div> -->
-
-                <div class="service-img-card">
-                    <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Intonaci e Rasatura">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Intonaci e Rasatura" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
                     </div>
                     <div class="card-content">
@@ -133,13 +107,13 @@
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Ristrutturazioni edili">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Ristrutturazioni edili" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-regular fa-building"></i></div>
                     </div>
                     <div class="card-content">
                         <div>
                             <h3>Ristrutturazioni Edili</h3>
-                            <p>Gestiamo il cantiere dalla A alla Z. Che si tratti di rifare un bagno o ristrutturare l'intero appartamento, pensiamo a tutto noi.</p>
+                            <p>Gestiamo il cantiere dalla A alla Z. Che si tratti di rifare un bagno o ristrutturare l&#39;intero appartamento, pensiamo a tutto noi.</p>
                         </div>
                         <a href="contatti.html#preventivo" class="card-action-btn">
                             Chiedi Sopralluogo <i class="fa-solid fa-arrow-right"></i>
@@ -149,7 +123,7 @@
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=600&auto=format&fit=crop" alt="Imbianchino e decoratore">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=600&auto=format&fit=crop" alt="Imbianchino e decoratore" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-solid fa-paint-roller"></i></div>
                     </div>
                     <div class="card-content">
@@ -165,13 +139,13 @@
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=600&auto=format&fit=crop" alt="Idraulico Torino">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=600&auto=format&fit=crop" alt="Idraulico" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-solid fa-droplet"></i></div>
                     </div>
                     <div class="card-content">
                         <div>
                             <h3>Impianti Idraulici</h3>
-                            <p>Rifacimento bagni, sostituzione rubinetteria e manutenzione impianti. Lavori eseguiti a regola d'arte per evitare perdite future.</p>
+                            <p>Rifacimento bagni, sostituzione rubinetteria e manutenzione impianti. Lavori eseguiti a regola d&#39;arte per evitare perdite future.</p>
                         </div>
                         <a href="contatti.html#preventivo" class="card-action-btn">
                             Chiedi Sopralluogo <i class="fa-solid fa-arrow-right"></i>
@@ -181,13 +155,13 @@
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" alt="Elettricista Torino">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" alt="Elettricista" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-solid fa-bolt"></i></div>
                     </div>
                     <div class="card-content">
                         <div>
                             <h3>Impianti Elettrici</h3>
-                            <p>Dalla semplice presa alla messa a norma dell'intero impianto. Garantiamo sicurezza e certificazione per la tua casa.</p>
+                            <p>Dalla semplice presa alla messa a norma dell&#39;intero impianto. Garantiamo sicurezza e certificazione per la tua casa.</p>
                         </div>
                         <a href="contatti.html#preventivo" class="card-action-btn">
                             Chiedi Sopralluogo <i class="fa-solid fa-arrow-right"></i>
@@ -197,7 +171,7 @@
 
                 <div class="service-img-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Posa pavimenti e piastrelle">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Posa pavimenti e piastrelle" loading="lazy">
                         <div class="card-floating-icon"><i class="fa-solid fa-border-all"></i></div>
                     </div>
                     <div class="card-content">
@@ -219,11 +193,10 @@
         <div class="container">
             <h2>Hai un lavoro particolare in mente?</h2>
             <p>Spesso le case richiedono interventi su misura. Chiamaci per spiegare la tua esigenza: troveremo la soluzione.</p>
-            
             <div class="cta-buttons-row">
                 <a href="contatti.html#preventivo" class="btn-red">Scrivici Ora <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="tel:3207146576" class="btn-white-border">
-                    <i class="fa-solid fa-phone" style="color:#64748B;"></i> 320 7146576
+                <a data-config-href="tel:{telefonoHref}" href="#" class="btn-white-border">
+                    <i class="fa-solid fa-phone" style="color:#64748B;"></i> <span data-config="telefono">320 000 0000</span>
                 </a>
             </div>
         </div>
@@ -241,11 +214,11 @@
                             <rect x="22" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                             <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                         </svg>
-                    </div> 
-                    <div class="logo-text">Albert Turcoman<br><span>Edilizia e Ristrutturazioni</span></div>
+                    </div>
+                    <div class="logo-text"><span data-config="nomeAzienda">EdilPro</span><br><span><span data-config="slogan">Edilizia e Ristrutturazioni</span></span></div>
                 </div>
-                <p class="footer-desc">Specializzati in Edilizia, Decorazioni, Idraulica, Elettricista, Piastrellista, Intonaci e Rasatura. Offriamo un servizio completo e professionale.</p>
-                <a href="https://wa.me/393207146576" class="btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
+                <p class="footer-desc"><span data-config="descrizioneBreve">Specializzati in edilizia, decorazioni, idraulica, impianti elettrici e pavimenti. Servizio completo e professionale.</span></p>
+                <a data-config-href="https://wa.me/{whatsapp}" href="#" class="btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
             </div>
 
             <div class="footer-col">
@@ -276,32 +249,29 @@
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <strong><a href="tel:3207146576" style="color:white; text-decoration: none;">320 7146576</a></strong>
+                            <strong><a data-config-href="tel:{telefonoHref}" href="#" style="color:white; text-decoration: none;" data-config="telefono">320 000 0000</a></strong>
                             <span>Chiamaci quando vuoi</span>
                         </div>
                     </li>
-                    
                     <li>
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <strong><a href="contatti.html#preventivo" style="color:white; text-decoration: none;">info@albertturcoman.it</a></strong>
+                            <strong><a href="contatti.html#preventivo" style="color:white; text-decoration: none;"><span data-config="email">info@edilpro.it</span></a></strong>
                             <span>Scrivici per preventivi</span>
                         </div>
                     </li>
-                    
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <strong><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Bottesini+15+Torino" target="_blank" style="color:white; text-decoration: none;">Piazza Bottesini 15</a></strong>
-                            <span>Torino (10154)</span>
+                            <strong><a data-config-href="https://www.google.com/maps/search/?api=1&query={mappaQuery}" href="#" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;"><span data-config="indirizzo">Via Roma 1</span></a></strong>
+                            <span><span data-config="citta">Milano</span></span>
                         </div>
                     </li>
-
                     <li>
                         <i class="fa-solid fa-clock"></i>
                         <div>
-                            <strong>Lun - Ven: 8:00 - 18:00</strong>
-                            <span>Sab: 8:00 - 13:00</span>
+                            <strong><span data-config="orariSettimana">Lun - Ven: 8:00 - 18:00</span></strong>
+                            <span><span data-config="orariSabato">Sab: 8:00 - 13:00</span></span>
                         </div>
                     </li>
                 </ul>
@@ -311,7 +281,7 @@
         <div class="footer-bottom">
             <div class="container bottom-flex">
                 <div class="bottom-left">
-                    © 2025 Albert Turcoman. P.IVA 13288160016
+                    &copy; <span data-anno></span> <span data-config="nomeAzienda">EdilPro</span>. P.IVA <span data-config="pIva">IT00000000000</span>
                     <div style="margin-top: 10px; font-size: 0.85rem;">
                         <a href="privacy.html" class="legal-link">Privacy Policy</a>
                         <span style="opacity: 0.5; margin: 0 5px;">|</span>
@@ -336,13 +306,17 @@
         </div>
     </div>
 
+    <!-- Floating WhatsApp Button -->
+    <a data-config-href="https://wa.me/{whatsapp}" href="#" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <script>
         // Menu Mobile
         function toggleMenu() { 
             const menu = document.getElementById('mobileMenu');
             if(menu) menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex'; 
         }
-        
         // Logica Cookie
         function acceptCookies() {
             document.getElementById('cookie-banner').classList.remove('show');
@@ -355,53 +329,12 @@
         function reopenBanner() {
             document.getElementById('cookie-banner').classList.add('show');
         }
-        
-        // Controllo all'avvio
         window.addEventListener('load', function() {
             if (!localStorage.getItem('cookieConsent')) {
                 setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1000);
             }
         });
     </script>
-</body>
-</html>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const computedStyle = window.getComputedStyle(menu);
-            if (computedStyle.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'flex';
-            }
-        }
-    </script>
-
-    <div id="cookie-banner">
-        <p>
-            Questo sito utilizza i cookie per garantirti la migliore esperienza. 
-            Leggi la nostra <a href="#" style="color: #cbd5e1; text-decoration: underline;">Cookie Policy</a>.
-        </p>
-        <button onclick="acceptCookies()">Accetto</button>
-    </div>
-
-    <script>
-        // Logica Cookie Banner
-        function acceptCookies() {
-            document.getElementById('cookie-banner').classList.remove('show');
-            localStorage.setItem('cookieConsent', 'true');
-        }
-
-        // Mostra il banner solo se non è stato ancora accettato
-        window.addEventListener('load', function() {
-            if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(function() {
-                    document.getElementById('cookie-banner').classList.add('show');
-                }, 1000); // Ritardo di 1 secondo per eleganza
-            }
-        });
-    </script>
-
+    <script src="config.js"></script>
 </body>
 </html>

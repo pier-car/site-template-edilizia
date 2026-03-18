@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galleria Lavori - I Nostri Progetti Realizzati</title>
-    <meta name="description" content="Guarda le foto dei nostri lavori di ristrutturazione a Torino. Esempi reali di bagni, cucine, pavimenti e finiture di pregio realizzati da noi.">
+    <title>Galleria Lavori — I Nostri Progetti Realizzati</title>
+    <meta name="description" content="Guarda le foto dei nostri lavori di ristrutturazione. Esempi reali di bagni, cucine, pavimenti e finiture di pregio realizzati da noi.">
+    <!-- Verifica Google Search Console: inserisci il codice qui sotto -->
+    <meta name="google-site-verification" content="">
+    <!-- URL canonico: aggiorna con l'URL reale dopo il deploy -->
+    <link rel="canonical" href="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Galleria Lavori — I Nostri Progetti Realizzati">
+    <meta property="og:description" content="Guarda le foto dei nostri lavori di ristrutturazione. Esempi reali di bagni, cucine, pavimenti e finiture di pregio.">
+    <meta property="og:image" content="images/og-cover.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
-        /* Reusing the dark hero style from Services */
-        .gallery-hero {
+        .gallery-hero {{
             background-color: var(--primary-dark);
             padding: 100px 0 80px;
             text-align: center;
             color: white;
-        }
-        /* White CTA Section specific to Gallery */
-        .gallery-cta {
+        }}
+        .gallery-cta {{
             background: white;
             text-align: center;
             padding: 100px 0;
             border-top: 1px solid var(--border);
-        }
+        }}
     </style>
 </head>
 <body>
@@ -40,7 +46,7 @@
                         <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                     </svg>
                 </div>
-                Albert Turcoman
+                <span data-config="nomeAzienda">EdilPro</span>
             </a>
             <nav class="desktop-menu">
                 <a href="index.html">Home</a>
@@ -49,7 +55,7 @@
                 <a href="contatti.html">Contatti</a>
             </nav>
             <div class="header-right">
-                <a href="tel:3207146576" class="phone-cta"><i class="fa-solid fa-phone"></i> 320 7146576</a>
+                <a data-config-href="tel:{telefonoHref}" href="#" class="phone-cta"><i class="fa-solid fa-phone"></i> <span data-config="telefono">320 000 0000</span></a>
                 <a href="contatti.html#preventivo" class="btn-red desktop-btn">Richiedi Preventivo</a>
                 <div class="mobile-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
             </div>
@@ -57,10 +63,10 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" onclick="toggleMenu()">Home</a>
-        <a href="servizi.html" onclick="toggleMenu()">Servizi</a>
-        <a href="galleria.html" onclick="toggleMenu()">Galleria</a>
-        <a href="contatti.html" onclick="toggleMenu()">Contatti</a>
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="contatti.html">Contatti</a>
         <a href="contatti.html#preventivo" class="btn-red" style="text-align:center; margin-top:20px; justify-content: center;">Richiedi Preventivo</a>
     </div>
 
@@ -86,47 +92,38 @@
             </div>
 
             <div class="gallery-grid">
-                
                 <div class="gallery-item" data-category="commerciale">
-                    <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?q=80&w=600&auto=format&fit=crop" alt="Commerciale">
+                    <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?q=80&w=600&auto=format&fit=crop" alt="Commerciale" loading="lazy">
                     <div class="overlay-text">Logistica Industriale</div>
                 </div>
-
                 <div class="gallery-item" data-category="muratura">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop" alt="Cantiere">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop" alt="Cantiere" loading="lazy">
                     <div class="overlay-text">Cantiere Edile</div>
                 </div>
-
                 <div class="gallery-item" data-category="progetti">
-                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=600&auto=format&fit=crop" alt="Progettazione">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=600&auto=format&fit=crop" alt="Progettazione" loading="lazy">
                     <div class="overlay-text">Progettazione Digitale</div>
                 </div>
-
                 <div class="gallery-item" data-category="ristrutturazioni">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop" alt="Cucina">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop" alt="Cucina" loading="lazy">
                     <div class="overlay-text">Ristrutturazione Cucina</div>
                 </div>
-
                 <div class="gallery-item" data-category="muri">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Lavori">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Lavori" loading="lazy">
                     <div class="overlay-text">Manutenzione Impianti</div>
                 </div>
-
                 <div class="gallery-item" data-category="muratura">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Cantiere">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Cantiere" loading="lazy">
                     <div class="overlay-text">Nuova Costruzione</div>
                 </div>
-
                 <div class="gallery-item" data-category="progetti">
-                    <img src="https://images.unsplash.com/photo-1600596542815-6ad4c427513f?q=80&w=600&auto=format&fit=crop" alt="Casa Moderna">
+                    <img src="https://images.unsplash.com/photo-1600596542815-6ad4c427513f?q=80&w=600&auto=format&fit=crop" alt="Casa Moderna" loading="lazy">
                     <div class="overlay-text">Villa Moderna</div>
                 </div>
-
                 <div class="gallery-item" data-category="pavimentazioni">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600&auto=format&fit=crop" alt="Interni">
-                    <div class="overlay-text">Interni & Pavimenti</div>
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600&auto=format&fit=crop" alt="Interni" loading="lazy">
+                    <div class="overlay-text">Interni &amp; Pavimenti</div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -134,7 +131,7 @@
     <section class="gallery-cta">
         <div class="container">
             <h2 style="font-size: 2rem; color: var(--primary-dark); font-weight: 700; margin-bottom: 15px;">Pronto a Iniziare il Tuo Progetto?</h2>
-            <p style="color: #64748B; margin-bottom: 30px;">Portiamo la stessa qualità artigianale nella tua casa o all'ufficio.</p>
+            <p style="color: #64748B; margin-bottom: 30px;">Portiamo la stessa qualità artigianale nella tua casa o all&#39;ufficio.</p>
             <a href="contatti.html#preventivo" class="btn-red" style="padding-left: 30px; padding-right: 30px;">
                 Richiedi Preventivo Gratuito <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
             </a>
@@ -153,11 +150,11 @@
                             <rect x="22" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                             <rect x="54" y="54" width="24" height="24" rx="6" stroke="#DC2626" />
                         </svg>
-                    </div> 
-                    <div class="logo-text">Albert Turcoman<br><span>Edilizia e Ristrutturazioni</span></div>
+                    </div>
+                    <div class="logo-text"><span data-config="nomeAzienda">EdilPro</span><br><span><span data-config="slogan">Edilizia e Ristrutturazioni</span></span></div>
                 </div>
-                <p class="footer-desc">Specializzati in Edilizia, Decorazioni, Idraulica, Elettricista, Piastrellista, Intonaci e Rasatura. Offriamo un servizio completo e professionale.</p>
-                <a href="https://wa.me/393207146576" class="btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
+                <p class="footer-desc"><span data-config="descrizioneBreve">Specializzati in edilizia, decorazioni, idraulica, impianti elettrici e pavimenti. Servizio completo e professionale.</span></p>
+                <a data-config-href="https://wa.me/{whatsapp}" href="#" class="btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
             </div>
 
             <div class="footer-col">
@@ -188,32 +185,29 @@
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <strong><a href="tel:3207146576" style="color:white; text-decoration: none;">320 7146576</a></strong>
+                            <strong><a data-config-href="tel:{telefonoHref}" href="#" style="color:white; text-decoration: none;" data-config="telefono">320 000 0000</a></strong>
                             <span>Chiamaci quando vuoi</span>
                         </div>
                     </li>
-                    
                     <li>
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <strong><a href="contatti.html#preventivo" style="color:white; text-decoration: none;">info@albertturcoman.it</a></strong>
+                            <strong><a href="contatti.html#preventivo" style="color:white; text-decoration: none;"><span data-config="email">info@edilpro.it</span></a></strong>
                             <span>Scrivici per preventivi</span>
                         </div>
                     </li>
-                    
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <strong><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Bottesini+15+Torino" target="_blank" style="color:white; text-decoration: none;">Piazza Bottesini 15</a></strong>
-                            <span>Torino (10154)</span>
+                            <strong><a data-config-href="https://www.google.com/maps/search/?api=1&query={mappaQuery}" href="#" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;"><span data-config="indirizzo">Via Roma 1</span></a></strong>
+                            <span><span data-config="citta">Milano</span></span>
                         </div>
                     </li>
-
                     <li>
                         <i class="fa-solid fa-clock"></i>
                         <div>
-                            <strong>Lun - Ven: 8:00 - 18:00</strong>
-                            <span>Sab: 8:00 - 13:00</span>
+                            <strong><span data-config="orariSettimana">Lun - Ven: 8:00 - 18:00</span></strong>
+                            <span><span data-config="orariSabato">Sab: 8:00 - 13:00</span></span>
                         </div>
                     </li>
                 </ul>
@@ -223,7 +217,7 @@
         <div class="footer-bottom">
             <div class="container bottom-flex">
                 <div class="bottom-left">
-                    © 2025 Albert Turcoman. P.IVA 13288160016
+                    &copy; <span data-anno></span> <span data-config="nomeAzienda">EdilPro</span>. P.IVA <span data-config="pIva">IT00000000000</span>
                     <div style="margin-top: 10px; font-size: 0.85rem;">
                         <a href="privacy.html" class="legal-link">Privacy Policy</a>
                         <span style="opacity: 0.5; margin: 0 5px;">|</span>
@@ -248,13 +242,52 @@
         </div>
     </div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; justify-content:center; align-items:center; cursor:pointer;" onclick="closeLightbox()">
+        <img id="lightbox-img" style="max-width:90%; max-height:90%; border: 2px solid white; border-radius:4px; box-shadow: 0 0 20px rgba(0,0,0,0.5);" alt="Immagine ingrandita">
+        <span aria-label="Chiudi lightbox" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; font-weight:bold;">&times;</span>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a data-config-href="https://wa.me/{whatsapp}" href="#" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Gallery Filter Logic
+        function filterGallery(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        document.querySelectorAll('section img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', e => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = e.target.src;
+            });
+        });
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+    </script>
+
     <script>
         // Menu Mobile
         function toggleMenu() { 
             const menu = document.getElementById('mobileMenu');
             if(menu) menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex'; 
         }
-        
         // Logica Cookie
         function acceptCookies() {
             document.getElementById('cookie-banner').classList.remove('show');
@@ -267,100 +300,12 @@
         function reopenBanner() {
             document.getElementById('cookie-banner').classList.add('show');
         }
-        
-        // Controllo all'avvio
         window.addEventListener('load', function() {
             if (!localStorage.getItem('cookieConsent')) {
                 setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1000);
             }
         });
     </script>
-</body>
-</html>
-
-    <script>
-        // Mobile Menu Toggle (Stesso degli altri file)
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const computedStyle = window.getComputedStyle(menu);
-            if (computedStyle.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'flex';
-            }
-        }
-
-        // Gallery Filter Logic
-        function filterGallery(category, btn) {
-            // 1. Reset buttons
-            let buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(b => b.classList.remove('active'));
-            // 2. Set active button
-            btn.classList.add('active');
-
-            // 3. Filter items
-            let items = document.querySelectorAll('.gallery-item');
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-    <div id="cookie-banner">
-        <p>
-            Questo sito utilizza i cookie per garantirti la migliore esperienza. 
-            Leggi la nostra <a href="#" style="color: #cbd5e1; text-decoration: underline;">Cookie Policy</a>.
-        </p>
-        <button onclick="acceptCookies()">Accetto</button>
-    </div>
-
-    <script>
-        // Logica Cookie Banner
-        function acceptCookies() {
-            document.getElementById('cookie-banner').classList.remove('show');
-            localStorage.setItem('cookieConsent', 'true');
-        }
-
-        // Mostra il banner solo se non è stato ancora accettato
-        window.addEventListener('load', function() {
-            if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(function() {
-                    document.getElementById('cookie-banner').classList.add('show');
-                }, 1000); // Ritardo di 1 secondo per eleganza
-            }
-        });
-    </script>
-
-    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; justify-content:center; align-items:center; cursor:pointer;" onclick="closeLightbox()">
-        <img id="lightbox-img" style="max-width:90%; max-height:90%; border: 2px solid white; border-radius:4px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-        <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; font-weight:bold;">&times;</span>
-    </div>
-
-    <script>
-        // Funzione per aprire la foto
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        // Seleziona tutte le immagini dentro la griglia della galleria
-        // NOTA: Assicurati che le tue immagini abbiano una classe o siano dentro un div specifico.
-        // Se hai usato il codice standard, questo script prende tutte le immagini della pagina eccetto il logo.
-        document.querySelectorAll('section img').forEach(img => {
-            img.style.cursor = 'pointer'; // Fa comparire la manina
-            img.addEventListener('click', e => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = e.target.src;
-            });
-        });
-
-        // Funzione per chiudere
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-        }
-    </script>
-
+    <script src="config.js"></script>
 </body>
 </html>
