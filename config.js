@@ -76,10 +76,23 @@ window.SITO = {
       el.textContent = window.SITO.annoCorrente;
     });
 
-    // Iframe mappa: usa data-map-src per sicurezza
-    document.querySelectorAll('iframe[data-map-src]').forEach(function (el) {
-      el.src = window.SITO.mappaEmbed;
-    });
+    // Iframe mappa: carica solo se l'utente ha accettato i cookie
+    window.loadConsentedMap = function () {
+      var consent = localStorage.getItem('cookieConsent');
+      var placeholder = document.getElementById('map-placeholder');
+      var iframe = document.getElementById('map-iframe');
+      if (consent === 'accepted') {
+        if (iframe && !iframe.src) {
+          iframe.src = window.SITO.mappaEmbed;
+        }
+        if (placeholder) { placeholder.style.display = 'none'; }
+        if (iframe) { iframe.style.display = 'block'; }
+      } else {
+        if (placeholder) { placeholder.style.display = 'flex'; }
+        if (iframe) { iframe.style.display = 'none'; }
+      }
+    };
+    window.loadConsentedMap();
 
     // Schema.org JSON-LD aggiornato dinamicamente
     var schemaEl = document.getElementById('schema-org');

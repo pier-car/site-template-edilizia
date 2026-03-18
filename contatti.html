@@ -123,16 +123,25 @@
                     </div>
 
                     <div class="map-wrapper">
-                        <!-- La mappa viene caricata da config.js tramite data-map-src -->
+                        <!-- Placeholder mostrato quando i cookie di terze parti non sono accettati -->
+                        <div id="map-placeholder" class="map-consent-placeholder">
+                            <div class="map-consent-inner">
+                                <div class="map-consent-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <p>Per visualizzare la mappa, accetta i cookie tecnici e di terze parti.</p>
+                                <button onclick="acceptCookiesAndLoadMap()" class="btn-red" style="margin-top:12px; padding: 10px 24px; font-size: 0.85rem;">Accetta Cookie</button>
+                            </div>
+                        </div>
+                        <!-- Iframe caricato da config.js solo se consenso accettato -->
                         <iframe
-                            data-map-src
+                            id="map-iframe"
                             title="Mappa sede"
                             width="100%"
                             height="100%"
                             frameborder="0"
                             scrolling="no"
                             marginheight="0"
-                            marginwidth="0">
+                            marginwidth="0"
+                            style="display:none; border:0;">
                         </iframe>
                     </div>
                 </div>
@@ -282,6 +291,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Torna su">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <script>
         function toggleMenu() { 
             const menu = document.getElementById('mobileMenu');
@@ -290,10 +304,17 @@
         function acceptCookies() {
             document.getElementById('cookie-banner').classList.remove('show');
             localStorage.setItem('cookieConsent', 'accepted');
+            if (typeof window.loadConsentedMap === 'function') window.loadConsentedMap();
+        }
+        function acceptCookiesAndLoadMap() {
+            document.getElementById('cookie-banner').classList.remove('show');
+            localStorage.setItem('cookieConsent', 'accepted');
+            if (typeof window.loadConsentedMap === 'function') window.loadConsentedMap();
         }
         function rejectCookies() {
             document.getElementById('cookie-banner').classList.remove('show');
             localStorage.setItem('cookieConsent', 'rejected');
+            if (typeof window.loadConsentedMap === 'function') window.loadConsentedMap();
         }
         function reopenBanner() {
             document.getElementById('cookie-banner').classList.add('show');
@@ -311,6 +332,12 @@
             if (header) {
                 if (window.scrollY > 60) { header.classList.add('scrolled'); }
                 else { header.classList.remove('scrolled'); }
+            }
+            const btt = document.getElementById('back-to-top');
+            if (btt) {
+                const halfway = (document.documentElement.scrollHeight - window.innerHeight) * 0.5;
+                if (window.scrollY > halfway) { btt.classList.add('visible'); }
+                else { btt.classList.remove('visible'); }
             }
         });
     </script>
