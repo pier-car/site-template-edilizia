@@ -269,6 +269,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Torna su">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <script>
         // Gallery Filter Logic
         function filterGallery(category, btn) {
@@ -329,6 +334,12 @@
             if (header) {
                 if (window.scrollY > 60) { header.classList.add('scrolled'); }
                 else { header.classList.remove('scrolled'); }
+            }
+            const btt = document.getElementById('back-to-top');
+            if (btt) {
+                const halfway = (document.documentElement.scrollHeight - window.innerHeight) * 0.5;
+                if (window.scrollY > halfway) { btt.classList.add('visible'); }
+                else { btt.classList.remove('visible'); }
             }
         });
     </script>

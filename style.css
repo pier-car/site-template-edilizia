@@ -1181,6 +1181,129 @@ footer {
 }
 
 
+/* --- 20. MAP CONSENT PLACEHOLDER --- */
+.map-consent-placeholder {
+    width: 100%; height: 100%;
+    background: rgba(6, 13, 28, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    text-align: center;
+}
+.map-consent-inner {
+    padding: 24px 28px;
+    max-width: 280px;
+}
+.map-consent-icon {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+    opacity: 0.7;
+}
+.map-consent-inner p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* --- 21. BACK TO TOP BUTTON --- */
+#back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 32px;
+    width: 42px; height: 42px;
+    background: rgba(10, 20, 40, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9998;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease, border-color 0.2s ease;
+    pointer-events: none;
+}
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#back-to-top:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #060D1C;
+}
+
+
+/* --- 22. MOBILE SERVICES CAROUSEL --- */
+@media (max-width: 768px) {
+    .services-section { padding: 60px 0; }
+    .gallery-section { padding: 60px 0; }
+    .section-padding { padding: 60px 0; }
+    .cta-section { padding: 70px 0; }
+    .section-header { margin-bottom: 36px; }
+
+    /* Horizontal carousel on mobile */
+    .services-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 14px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+        /* hide scrollbar visually */
+        scrollbar-width: none;
+    }
+    .services-grid::-webkit-scrollbar { display: none; }
+
+    .service-card {
+        min-width: 78vw;
+        max-width: 82vw;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        /* reset bento grid overrides */
+        grid-column: unset !important;
+        grid-row: unset !important;
+        min-height: unset !important;
+        flex-direction: column !important;
+    }
+    /* 6th card: back to column on mobile */
+    .service-card:nth-child(6) {
+        flex-direction: column !important;
+        padding: 32px !important;
+    }
+    .service-card:nth-child(6) .link-arrow { margin-left: 0 !important; }
+
+    /* Carousel scroll hint dots */
+    .services-carousel-hint {
+        text-align: center;
+        margin-top: 16px;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+    .services-carousel-hint i { font-size: 0.7rem; opacity: 0.6; }
+}
+
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1216,14 +1339,6 @@ footer {
     .hero-actions { justify-content: center; }
     .trust-row { flex-direction: column; align-items: center; gap: 20px; }
     .trust-row .trust-item { justify-content: center; }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    .service-card { grid-column: auto !important; grid-row: auto !important; }
-    .service-card:nth-child(6) { flex-direction: column; padding: 32px; }
-    .service-card:nth-child(6) .link-arrow { margin-left: 0; }
 
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .about-layout { gap: 40px; }

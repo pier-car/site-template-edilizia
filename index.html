@@ -139,6 +139,7 @@
                     <a href="servizi.html" class="link-arrow">Scopri il Servizio <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
+            <p class="services-carousel-hint"><i class="fa-solid fa-chevron-left"></i> scorri per altri servizi <i class="fa-solid fa-chevron-right"></i></p>
 
             <div style="text-align: center; margin-top: 56px;">
                 <a href="servizi.html" class="btn-red">Esplora Tutti i Servizi <i class="fa-solid fa-arrow-right"></i></a>
@@ -328,6 +329,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Torna su">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json" id="schema-org"></script>
 
@@ -341,6 +347,13 @@
                 } else {
                     header.classList.remove('scrolled');
                 }
+            }
+            // Back to top — show after 50% of page height
+            const btt = document.getElementById('back-to-top');
+            if (btt) {
+                const halfway = (document.documentElement.scrollHeight - window.innerHeight) * 0.5;
+                if (window.scrollY > halfway) { btt.classList.add('visible'); }
+                else { btt.classList.remove('visible'); }
             }
         });
 
