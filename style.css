@@ -76,7 +76,7 @@ header {
     position: relative;
     z-index: 10;
     padding: 5px;
-    transition: color 0.2s;
+    transition: all 0.2s;
 }
 
 .btn-red {
